@@ -1,8 +1,4 @@
-# ASAP 토이 프로젝트
-- 스터디 공고 + 참여할 수 있는 프로젝트
-    - 공고, 등록, 참여 세화면
-    - 회원가입, 로그인 (아이디 , 비번 정도)
-    - 총 다섯 화면
+# asap-toy-fe1
 
 ## Available Scripts
 
@@ -70,4 +66,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# asap-toy-fe1
