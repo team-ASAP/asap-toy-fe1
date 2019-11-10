@@ -17,7 +17,20 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "indent": [
+        "error",
+        4
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -32,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^6.0.3"
+    "cross-env": "^6.0.3",
+    "prettier-eslint": "^9.0.0"
   }
 }
