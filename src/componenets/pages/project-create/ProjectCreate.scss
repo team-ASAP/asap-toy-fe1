@@ -1,0 +1,45 @@
+@import "../../../CommonColor.scss";
+
+.project-create {
+  padding: 45px 35px;
+  background: $background-color;
+  height: 100%;
+  header {
+    position: sticky;
+    top: 0;
+    text-align: right;
+    font-size: 1.5em;
+    a {
+      text-decoration: none;
+    }
+  }
+  nav {
+    position: fixed;
+    bottom: 30px;
+  }
+  ul {
+    list-style: none;
+    margin: 40px 0;
+  }
+  li {
+    line-height: 40px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px 0 #d2d7e0;
+    background: #ffffff;
+    padding-left: 10px;
+
+    &.selected {
+      background: $slected-color;
+    }
+    input {
+      border: none;
+      color: black;
+      height: 38px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
