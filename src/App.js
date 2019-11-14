@@ -5,10 +5,10 @@ import { Main } from './componenets/pages';
 class App extends Component {
     render() {
         return (
-            <div>
-                <Route exact path="/" component={Main} />
-                <Route path="/main" component={Main} />
-            </div>
+          <>
+            <Route exact path="/" component={Main} />
+            <Route path="/main" component={Main} />
+          </>
         );
     }
 }

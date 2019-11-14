@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
     "node-sass": "^4.12.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
@@ -17,19 +19,14 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app",
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
     "rules": {
-      "quotes": [
-        "error",
-        "single",
-        {
-          "avoidEscape": true
-        }
-      ],
-      "indent": [
-        "error",
-        4
-      ]
+      "react/prefer-stateless-function": 0,
+      "react/jsx-filename-extension": 0,
+      "react/jsx-one-expression-per-line": 0
     }
   },
   "browserslist": {
