@@ -44,5 +44,17 @@
   "devDependencies": {
     "cross-env": "^6.0.3",
     "prettier-eslint": "^9.0.0"
-  }
+  },
+  "description": "## Available Scripts",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-ASAP/asap-toy-fe1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-ASAP/asap-toy-fe1/issues"
+  },
+  "homepage": "https://github.com/team-ASAP/asap-toy-fe1#readme"
 }
