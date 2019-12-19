@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Main extends Component {
-    render() {
-        return <div>메인입니다.</div>;
-    }
-}
+const Main = () => {
+    return (
+      <>
+        <div>메인입니다.</div>
+        <input type="text" />
+      </>
+    );
+};
 
 export default Main;
