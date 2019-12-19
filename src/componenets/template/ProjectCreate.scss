@@ -1,0 +1,92 @@
+@import "../../CommonColor.scss";
+
+.project-create {
+  padding: 45px 35px;
+  background: $background-color;
+  height: 100%;
+  header {
+    position: sticky;
+    top: 0;
+    text-align: right;
+    font-size: 1.5em;
+    a {
+      text-decoration: none;
+    }
+  }
+  nav {
+    position: fixed;
+    bottom: 30px;
+  }
+  ul {
+    list-style: none;
+    margin: 40px 0;
+  }
+  li {
+    line-height: 40px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px 0 #d2d7e0;
+    background: #ffffff;
+    padding-left: 10px;
+
+    &.selected {
+      animation: gradient 100ms;
+      background: $slected-color;
+      color: #fff;
+      box-shadow: none;
+    }
+    input {
+      border: none;
+      color: black;
+      height: 38px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 235, 59, 0) 0%,
+      #fff 0%,
+      #fff 100%
+    );
+  }
+  25% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 235, 59, 0.3) 24%,
+      #fff 25%,
+      #fff 100%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 235, 59, 0.5) 49%,
+      #fff 50%,
+      #fff 100%
+    );
+  }
+  75% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 235, 59, 0.8) 74%,
+      #fff 75%,
+      #fff 100%
+    );
+  }
+  100% {
+    color: #fff;
+    background: radial-gradient(
+      circle at center,
+      $slected-color 99%,
+      #fff 100%,
+      #fff 100%
+    );
+  }
+}

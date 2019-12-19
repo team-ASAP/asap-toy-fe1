@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Main } from './componenets/pages';
-import ProjectSelectPeriod from './componenets/pages/project-create/ProjectSelectPeriod';
 import './App.scss';
+import { ProjectSelectPeriod, ProjectSelectPersonnel } from './componenets/pages/project-create';
 
 class App extends Component {
     render() {
         return (
           <>
-            <Route exact path="/" component={Main} />
-            <Route path="/main" component={Main} />
-            <Route path="/project/new" component={ProjectSelectPeriod} />
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route path="/main" component={Main} />
+              <Route exact path="/new" component={ProjectSelectPeriod} />
+              <Route path="/new/period" component={ProjectSelectPeriod} />
+              <Route path="/new/perssonal" component={ProjectSelectPersonnel} />
+            </Switch>
           </>
         );
     }
