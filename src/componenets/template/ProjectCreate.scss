@@ -1,5 +1,9 @@
 @import "../../CommonColor.scss";
-
+@mixin focus() {
+  animation: gradient 100ms;
+  background: $slected-color;
+  color: #fff;
+}
 .project-create {
   padding: 45px 35px;
   background: $background-color;
@@ -30,10 +34,14 @@
     padding-left: 10px;
 
     &.selected {
-      animation: gradient 100ms;
-      background: $slected-color;
-      color: #fff;
+      @include focus();
       box-shadow: none;
+      input {
+        @include focus();
+        &::placeholder {
+            color: #fff;
+        }
+      }
     }
     input {
       border: none;
