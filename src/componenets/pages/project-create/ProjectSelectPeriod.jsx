@@ -13,8 +13,10 @@ const ProjectSelectPeriod = () => {
 		<ProjectCreateTemplate
 			pageTitle={`스터디 기간을
         알려주세요`}
+			state={period}
 			setState={setPeriod}
 			selectList={list}
+			prevLink="/new"
 			nextLink="/new/perssonal"
 		/>
 	)
