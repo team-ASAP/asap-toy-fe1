@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { Main } from './componenets/pages';
+// import { Route } from 'react-router-dom';
+// import { Main } from './componenets/pages';
 
 class Login extends Component {
     render() {
