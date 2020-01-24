@@ -11,7 +11,7 @@ class Login extends Component {
 
   componentDidMount = () => {
     axios
-      .post("http://localhost:3000/auth/join", {
+      .post("http://localhost:4000/auth/join", {
         id: "torom",
         passwd: "1234"
       })
