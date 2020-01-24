@@ -6,19 +6,40 @@ const beApiAdd = "http://localhost:3000/auth/login";
 class Login extends Component {
   state = {
     id: "",
-    pw: "",
-    beApi: []
+    passwd: ""
   };
 
-  async componentDidMount() {
-    let { data: beApi } = await axios.post(beApiAdd);
-    this.setState({ beApi });
-    console.log(beApi);
-  }
+  componentDidMount = () => {
+    axios
+      .post("http://localhost:3000/auth/join", {
+        id: "torom",
+        passwd: "1234"
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  };
 
-  handleChange = e => {};
+  handleChange = e => {
+    this.setState({
+      id: e.target.defalutValue,
+      passwd: e.target.defalutValue
+    });
+  };
 
-  handleSubmit = e => {};
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const user = {
+      id: this.state.id,
+      passwd: this.state.passwd
+    };
+
+    axios.post(beApiAdd, { user }).then(res => {
+      console.log(res.data);
+    });
+  };
 
   render() {
     return (
@@ -36,10 +57,10 @@ class Login extends Component {
             <br />
             <span>비밀번호 </span>
             <input
-              type="pw"
-              placeholder="pw"
-              defaultValue={this.state.pw}
-              name="pw"
+              type="pwd"
+              placeholder="passwd"
+              defaultValue={this.state.passwd}
+              name="passwd"
             />
             <br />
             <button type="submit">로그인</button>
