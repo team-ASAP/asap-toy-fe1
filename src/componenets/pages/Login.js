@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-const beApiAdd = "http://localhost:3000/auth/login";
+// Back api 주소 (포트 400으로 바뀜)
+const beApiAdd = "http://localhost:4000/auth/login";
 
 class Login extends Component {
   state = {
@@ -9,36 +10,38 @@ class Login extends Component {
     passwd: ""
   };
 
-  componentDidMount = () => {
+  /* auth/join 사용해서 임시 회원가입 */
+  // componentDidMount = () => {
+  //   axios
+  //     .post("http://localhost:4000/auth/join", {
+  //       id: "torom",
+  //       passwd: "1234"
+  //     })
+  //     .then(res => {
+  //       console.log(res);
+  //       console.log(res.data);
+  //     });
+  // };
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleSubmit = e => {
+    // 새로고침 방지
+    e.preventDefault();
+
     axios
-      .post("http://localhost:4000/auth/join", {
-        id: "torom",
-        passwd: "1234"
+      .post(beApiAdd, {
+        id: this.state.id,
+        passwd: this.state.passwd
       })
       .then(res => {
         console.log(res);
         console.log(res.data);
       });
-  };
-
-  handleChange = e => {
-    this.setState({
-      id: e.target.defalutValue,
-      passwd: e.target.defalutValue
-    });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-
-    const user = {
-      id: this.state.id,
-      passwd: this.state.passwd
-    };
-
-    axios.post(beApiAdd, { user }).then(res => {
-      console.log(res.data);
-    });
   };
 
   render() {
@@ -47,19 +50,21 @@ class Login extends Component {
         <h1>로그인</h1>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <span>아이디 </span>
+            <span>아이디 : </span>
             <input
               type="text"
-              placeholder="id"
-              defaultValue={this.state.id}
+              placeholder="아이디"
+              onChange={this.handleChange}
+              value={this.state.id}
               name="id"
             />
             <br />
-            <span>비밀번호 </span>
+            <span>비밀번호 : </span>
             <input
-              type="pwd"
-              placeholder="passwd"
-              defaultValue={this.state.passwd}
+              type="password"
+              placeholder="비밀번호"
+              value={this.state.passwd}
+              onChange={this.handleChange}
               name="passwd"
             />
             <br />
