@@ -37,10 +37,12 @@ class Login extends Component {
       .post(beApiAdd, {
         id: this.state.id,
         passwd: this.state.passwd
-      })
+      }, {withCredentials: true})
       .then(res => {
         console.log(res);
         console.log(res.data);
+        //홈으로 리다이렉트
+        this.props.history.push("/");
       });
   };
 
