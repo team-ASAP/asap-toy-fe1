@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Main } from './componenets/pages';
+import Login from "./componenets/pages/Login";
 import './App.scss';
 import { ProjectSelectPeriod, ProjectSelectPersonnel, ProjectContent } from './componenets/pages/project-create';
 
@@ -11,6 +12,7 @@ class App extends Component {
 				<Switch>
 					<Route exact path="/" component={Main} />
 					<Route path="/main" component={Main} />
+					<Route path="/login" component={Login} />
 					<Route exact path="/new" component={ProjectContent} />
 					<Route path="/new/content" component={ProjectContent} />
 					<Route path="/new/period" component={ProjectSelectPeriod} />
